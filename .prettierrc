@@ -1,0 +1,8 @@
+{
+  "singleQuote": false,
+  "quoteProps": "preserve",
+  "trailingComma": "es5",
+  "proseWrap": "preserve",
+  "semi": false,
+  "tabWidth": 2
+}
