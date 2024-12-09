@@ -1,0 +1,16 @@
+.template {
+  @apply relative flex flex-col gap-2 text-3xl;
+}
+
+.swap {
+  @apply absolute top-0 left-0 w-5 h-7 cursor-pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.formula {
+  @apply flex flex-col justify-center items-center flex-1 px-5;
+}

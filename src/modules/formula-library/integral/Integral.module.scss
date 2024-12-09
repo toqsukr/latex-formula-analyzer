@@ -1,0 +1,12 @@
+.integral {
+  @apply flex flex-col items-center;
+}
+
+.range {
+  @apply h-8 text-lg;
+}
+
+#top {
+  display: flex;
+  align-items: end;
+}

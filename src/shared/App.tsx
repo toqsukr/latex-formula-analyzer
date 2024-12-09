@@ -1,4 +1,4 @@
-import Latex from "react-latex-next"
+import OperationBar from "../modules/formula-library/operation-bar/OperationBar"
 
 const text = [
   String.raw`
@@ -17,15 +17,13 @@ const text = [
     `,
 ]
 
-const INITIAL_MACROS = { "\\f": "#1f(#2)" }
-const INITIAL_STRICT_FLAG = false
 function App() {
   return (
-    <div style={{ textAlign: "center" }}>
-      <Latex strict={INITIAL_STRICT_FLAG} macros={INITIAL_MACROS}>
-        {text}
-      </Latex>
-    </div>
+    <main className="h-full">
+      <div className="h-full">
+        <OperationBar />
+      </div>
+    </main>
   )
 }
 

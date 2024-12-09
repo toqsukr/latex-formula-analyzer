@@ -1,0 +1,5 @@
+.bar {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, 140px);
+  grid-template-rows: 200px;
+}
