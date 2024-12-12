@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Latex from "react-latex-next"
 import { addStyles, EditableMathField } from "react-mathquill"
-import OperationBar from "../formula-library/operation-bar/OperationBar"
+import OperationBar from "../operation-bar/OperationBar"
 import css from "./Control.module.scss"
 
 // const text = [

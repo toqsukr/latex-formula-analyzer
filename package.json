@@ -17,7 +17,7 @@
     "hakaton": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.54.0",
+    "react-hook-form": "^7.54.1",
     "react-latex-next": "^3.0.0",
     "react-mathquill": "^1.0.3",
     "sass": "^1.82.0",
