@@ -4,22 +4,25 @@ import SwapIcon from "../../../shared/ui/SwapIcon"
 import css from "./FormulaTemplate.module.scss"
 import { FormulaTemplateProp } from "./FormulaTemplate.type"
 
-const FormulaTemplate: FC<FormulaTemplateProp> = ({ onAdd, variants }) => {
+const FormulaTemplate: FC<FormulaTemplateProp> = ({ templates, onAdd }) => {
   const [variantIndex, setVariant] = useState(0)
+  const { element, value } = templates[variantIndex]
   return (
     <div className={css.template}>
       <div className={css.formula}>
-        {variants.length > 1 && (
+        {templates.length > 1 && (
           <button>
             <SwapIcon
               className={css.swap}
-              onClick={() => setVariant((prev) => (prev + 1) % variants.length)}
+              onClick={() =>
+                setVariant((prev) => (prev + 1) % templates.length)
+              }
             />
           </button>
         )}
-        {variants[variantIndex]}
+        {element}
       </div>
-      <Button onClick={onAdd}>Add</Button>
+      <Button onClick={() => onAdd(value)}>Add</Button>
     </div>
   )
 }

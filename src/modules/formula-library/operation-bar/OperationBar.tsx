@@ -1,30 +1,22 @@
-import FormulaTemplate from "../formula-template/FormulaTemplate"
-import Integral from "../integral/Integral"
-import Trigonometry from "../trigonometry/Trigonometry"
+import { FC } from "react"
+import FormulaIntegral from "./formula-integral/FormulaIntegral"
+import FormulaLimit from "./formula-limit/FormulaLimit"
+import FormulaLogarifm from "./formula-logarifm/FormulaLogarifm"
+import FormulaSquareRoot from "./formula-square-root/FormulaSquareRoot"
 import css from "./OperationBar.module.scss"
+import { OperationBarProp } from "./OperationBar.type"
 
-const OperationBar = () => {
+const OperationBar: FC<OperationBarProp> = ({ onUpdate }) => {
+  const handleAdd = (value: string) => {
+    console.log(value)
+    onUpdate(value)
+  }
   return (
     <section className={css.bar}>
-      <FormulaTemplate
-        variants={[
-          <Integral type="common" />,
-          <Integral type="inf-bottom" />,
-          <Integral type="minus-inf-bottom" />,
-          <Integral type="inf-top" />,
-          <Integral type="minus-inf-top" />,
-          <Integral type="all" />,
-        ]}
-        onAdd={() => {}}
-      />
-      <FormulaTemplate
-        variants={[
-          <Trigonometry type="sin" />,
-          <Trigonometry type="cos" />,
-          <Trigonometry type="tg" />,
-        ]}
-        onAdd={() => {}}
-      />
+      <FormulaIntegral onAdd={handleAdd} />
+      <FormulaLogarifm onAdd={handleAdd} />
+      <FormulaLimit onAdd={handleAdd} />
+      <FormulaSquareRoot onAdd={handleAdd} />
     </section>
   )
 }

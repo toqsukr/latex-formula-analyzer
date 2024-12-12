@@ -7,6 +7,25 @@
   --main-background-color: #242424;
 }
 
+.mq-editable-field,
+.mq-latex-command-input,
+.mq-cursor {
+  border-color: white !important;
+}
+
+.mq-denominator {
+  border-width: 2px !important;
+}
+
+.mq-empty {
+  border-width: 2px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.mq-numerator {
+  padding: 0 0.2em !important;
+}
+
 #root {
   width: 100%;
   height: 100%;

@@ -1,4 +1,9 @@
 export type FormulaTemplateProp = {
-  onAdd: () => void
-  variants: ReactNode[]
+  templates: TemplateProp[]
+  onAdd: (value: string) => void
+}
+
+export type TemplateProp = {
+  element: ReactNode
+  value: string
 }
