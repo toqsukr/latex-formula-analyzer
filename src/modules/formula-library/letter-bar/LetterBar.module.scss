@@ -1,0 +1,5 @@
+.letter_bar {
+  @apply flex gap-8 overflow-x-auto overflow-y-hidden p-8;
+  background-color: var(--bar-background-color);
+  border-radius: var(--bar-border-radius);
+}

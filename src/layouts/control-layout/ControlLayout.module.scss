@@ -1,8 +1,14 @@
-.control_layout {
+.control_wrapper {
   @apply w-full grid gap-8 self-center;
-  grid-template-columns: 30% 1fr;
-  grid-template-rows: 492px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr max-content;
   font-size: 250% !important;
+}
+
+.formula_wrapper {
+  @apply w-full grid gap-8 self-center;
+  grid-template-columns: calc(30% - 2rem) 70%;
+  grid-template-rows: 492px;
 }
 
 .content {

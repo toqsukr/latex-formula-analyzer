@@ -1,7 +1,7 @@
 .bar {
-  @apply w-full grid justify-center p-6;
+  @apply w-full grid justify-center p-8 gap-8 overflow-x-auto overflow-y-hidden;
   border-radius: var(--bar-border-radius);
   background-color: var(--bar-background-color);
   grid-template-columns: repeat(auto-fit, 120px);
-  grid-template-rows: repeat(auto-fit, 180px);
+  grid-template-rows: repeat(3, 1fr);
 }

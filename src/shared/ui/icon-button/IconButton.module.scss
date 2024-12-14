@@ -1,9 +1,10 @@
 .icon_button {
-  @apply h-full flex justify-center items-center bg-white text-black rounded-xl;
-  opacity: 0.9;
-  transition: color 0.3s, opacity 0.3s;
+  @apply h-full w-full flex justify-center items-center bg-white rounded-xl cursor-pointer;
+  color: black;
+  scale: 1;
+  transition: color 0.2s, scale 0.2s;
   &:hover {
     color: var(--active-icon-color);
-    opacity: 1;
+    scale: 1.05;
   }
 }

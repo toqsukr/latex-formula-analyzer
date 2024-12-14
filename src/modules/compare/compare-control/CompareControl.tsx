@@ -5,12 +5,16 @@ import { MdCompareArrows } from "react-icons/md"
 import css from "./CompareControl.module.scss"
 
 const CompareControl = () => {
-  const { latexValue, handleChange, clearLatex } = useControl()
-  const manipulatorProps = { latexValue, handleChange, clearLatex }
+  const { key: uploadKey, latexValue, handleChange, clearLatex } = useControl()
+  const manipulatorProps = { uploadKey, latexValue, handleChange, clearLatex }
   return (
     <>
       <ManipulationBar {...manipulatorProps} />
-      <ManipulationBar {...manipulatorProps} />
+      <ManipulationBar
+        clearLatex={() => {}}
+        handleChange={() => {}}
+        latexValue=""
+      />
       <IconButton id={css.compare} icon={<MdCompareArrows />} />
     </>
   )

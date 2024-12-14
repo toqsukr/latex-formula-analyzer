@@ -8,7 +8,7 @@
   --bar-background-color: rgba(0, 0, 0, 0.5);
   --bar-border-radius: 1.5rem;
   --shadow-color: rgba(255, 255, 255, 0.2);
-  --active-icon-color: rgb(0, 122, 255);
+  --active-icon-color: #000;
 }
 
 #root {
@@ -26,15 +26,9 @@
 *,
 *::before,
 *::after {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-*::-webkit-scrollbar {
-  display: none; // Chrome, Safari and Opera
 }
 
 :focus,
@@ -77,11 +71,6 @@ input {
   &::-ms-clear {
     display: none;
   }
-
-  &:-webkit-autofill,
-  &:-webkit-autofill:focus {
-    transition: background-color 0s 600000s, color 0s 600000s !important;
-  }
 }
 
 button {
@@ -106,4 +95,21 @@ img {
 }
 div {
   -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

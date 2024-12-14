@@ -1,9 +1,11 @@
 .template {
-  @apply h-full w-full relative flex flex-col text-4xl;
+  @apply h-full w-full relative flex text-4xl;
 }
 
-.swap {
-  @apply absolute top-0 left-0 w-5 h-7 cursor-pointer;
+.swap_wrapper {
+  @apply absolute top-1 left-2 cursor-pointer;
+  z-index: 1;
+  color: black;
   transition: opacity 0.3s;
   opacity: 0.7;
   &:hover {
@@ -11,6 +13,6 @@
   }
 }
 
-.formula {
-  @apply flex flex-col justify-center items-center flex-1 px-5;
+#swap {
+  @apply w-5 h-7;
 }

@@ -28,31 +28,35 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
       console.error(e)
     }
   }
+
+  const content = [
+    <EditableMathField
+      latex={latexValue}
+      onChange={(mathField) => {
+        handleChange(mathField.latex(), true)
+      }}
+    />,
+    <SpinnerLoader className="absolute top-0 left-0" />,
+  ]
+
   return (
     <div className={css.manipulator}>
-      <div className="flex relative">
-        {!!isFetching && <SpinnerLoader className="absolute top-0 left-0" />}
-        <EditableMathField
-          className="flex-1"
-          latex={latexValue}
-          onChange={(mathField) => {
-            handleChange(mathField.latex(), true)
-          }}
-        />
+      <div className="w-full relative bg-[var(--bar-background-color)] rounded-[var(--bar-border-radius)] overflow-x-auto overflow-y-hidden">
+        {content[isFetching]}
       </div>
       <div className={css.buttons}>
         <IconButton
           onClick={handleCopy}
           icon={<IoCopyOutline className="w-[26px] h-[26px]" />}
         />
+        <UploadImage
+          mutationKey={uploadKey}
+          onSuccess={(formulas) => handleChange(formulas.join("\\"))}
+        />
         <IconButton
           onClick={clearLatex}
           id={css.reset}
           icon={<RxCross2 className="w-[26px] h-[26px]" />}
-        />
-        <UploadImage
-          mutationKey={uploadKey}
-          onSuccess={(formulas) => handleChange(formulas.join("\\"))}
         />
       </div>
     </div>

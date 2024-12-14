@@ -1,5 +1,6 @@
 .mq-root-block {
   height: 100% !important;
+  width: max-content !important;
   display: flex !important;
   align-items: center !important;
 
@@ -15,19 +16,20 @@
 .mq-latex-command-input,
 .mq-cursor {
   border-color: white !important;
+  border-width: 2px !important;
 }
 
 .mq-editable-field {
   height: 230px !important;
-  background-color: var(--bar-background-color);
+  width: 100% !important;
   border-radius: var(--bar-border-radius) !important;
   border: 0 !important;
   padding: 10px !important;
   transition: box-shadow 0.3s;
   &.mq-focused {
-    box-shadow: 0 0 4px 4px var(--shadow-color) !important;
-    -moz-box-shadow: 0 0 4px 4px var(--shadow-color) !important;
-    -webkit-box-shadow: 0 0 4px 4px var(--shadow-color) !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
   }
 }
 

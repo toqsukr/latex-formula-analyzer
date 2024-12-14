@@ -1,6 +1,6 @@
 .manipulator {
   @apply h-full grid gap-8;
-  grid-template-columns: 1fr 87px;
+  grid-template-columns: calc(100% - 119px) 87px;
   border-radius: var(--bar-border-radius);
 }
 
