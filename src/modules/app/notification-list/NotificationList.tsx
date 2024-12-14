@@ -1,4 +1,5 @@
 import AchievementMessage from "@shared/ui/achievement-message/AchievementMessage"
+import CompareResultMessage from "@shared/ui/compare-result-message/CompareResultMessage"
 import ErrorMessage from "@shared/ui/error-message/ErrorMessage"
 import { createRef, FC } from "react"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
@@ -15,6 +16,7 @@ const NotificationList: FC<NotificationListProp> = ({ notifications }) => {
   const message: Record<NotificationType, FC<{ text: string }>> = {
     error: ErrorMessage,
     success: AchievementMessage,
+    "compare-result": CompareResultMessage,
   }
 
   const getMessage = (type: NotificationType, text: string) => {
