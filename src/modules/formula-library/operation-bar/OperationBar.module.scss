@@ -1,3 +1,7 @@
 .bar {
-  @apply flex;
+  @apply w-full grid justify-center p-6;
+  border-radius: var(--bar-border-radius);
+  background-color: var(--bar-background-color);
+  grid-template-columns: repeat(auto-fit, 120px);
+  grid-template-rows: repeat(auto-fit, 180px);
 }

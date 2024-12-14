@@ -1,0 +1,10 @@
+#compare {
+  @apply h-[5rem] p-5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-57px - 50%), -50%);
+  > svg {
+    transform: rotate(90deg);
+  }
+}

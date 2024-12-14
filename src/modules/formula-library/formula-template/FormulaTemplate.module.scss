@@ -1,9 +1,9 @@
 .template {
-  @apply relative w-28 h-36 flex flex-col text-3xl;
+  @apply h-full w-full relative flex flex-col text-4xl;
 }
 
 .swap {
-  @apply absolute top-0 left-0 w-4 h-6 cursor-pointer;
+  @apply absolute top-0 left-0 w-5 h-7 cursor-pointer;
   transition: opacity 0.3s;
   opacity: 0.7;
   &:hover {

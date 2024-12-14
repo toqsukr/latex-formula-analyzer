@@ -1,0 +1,16 @@
+.manipulator {
+  @apply h-full grid gap-8;
+  grid-template-columns: 1fr 87px;
+  border-radius: var(--bar-border-radius);
+}
+
+.buttons {
+  @apply grid gap-4 p-4;
+  grid-template-rows: repeat(auto-fit, 55px);
+  background-color: var(--bar-background-color);
+  border-radius: var(--bar-border-radius);
+}
+
+#reset {
+  --active-icon-color: rgba(255, 10, 10);
+}

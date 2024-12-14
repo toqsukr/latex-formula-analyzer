@@ -1,0 +1,10 @@
+.control_layout {
+  @apply w-full grid gap-8 self-center;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 492px;
+  font-size: 250% !important;
+}
+
+.content {
+  @apply relative grid grid-rows-2 gap-8;
+}
