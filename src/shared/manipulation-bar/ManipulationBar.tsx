@@ -1,4 +1,6 @@
-import { MutationKeys } from "@modules/app/constants"
+import { MutationKeys, NotificationCodes } from "@modules/app/constants"
+import { handleNotification } from "@modules/app/model/handle-notification"
+import { useAchievementStore } from "@modules/app/store"
 import UploadImage from "@modules/latex-extract/upload-image/UploadImage"
 import IconButton from "@shared/ui/icon-button/IconButton"
 import SpinnerLoader from "@shared/ui/spinner-loader/SpinnerLoader"
@@ -20,12 +22,23 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
   const isFetching = useIsMutating({
     mutationKey: [MutationKeys.UPLOAD_IMAGE, uploadKey],
   })
+
   const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(latexValue)
-      alert("Successful copied!")
-    } catch (e) {
-      console.error(e)
+    if (latexValue) {
+      try {
+        await navigator.clipboard.writeText(latexValue)
+        const notification = {
+          code: NotificationCodes.SUCCESS_COPY,
+          text: "Формула скопирована!",
+        }
+        handleNotification({
+          notification,
+          store: useAchievementStore.getState(),
+          time: 2000,
+        })
+      } catch (e) {
+        console.error(e)
+      }
     }
   }
 

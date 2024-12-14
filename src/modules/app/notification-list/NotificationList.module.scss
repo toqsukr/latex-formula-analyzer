@@ -1,0 +1,40 @@
+.notification_list {
+  @apply text-lg;
+  position: fixed;
+  display: flex;
+  width: 60vw;
+  flex-direction: column;
+  color: white;
+  gap: 12px;
+  top: 1rem;
+  left: 50%;
+  padding: 0 10%;
+  z-index: 100;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.notification_enter {
+  scale: 1;
+  opacity: 1;
+  animation: appearanceAnimation 0.3s ease-in-out;
+}
+
+.notification_exit {
+  opacity: 0;
+  scale: 0;
+  animation: appearanceAnimation 0.3s ease-in-out reverse;
+}
+
+@keyframes appearanceAnimation {
+  0% {
+    scale: 0;
+    opacity: 0;
+    translate: 0 -100px;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+    translate: 0 0;
+  }
+}

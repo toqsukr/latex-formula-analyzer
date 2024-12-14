@@ -1,11 +1,15 @@
 import LetterBar from "@modules/formula-library/letter-bar/LetterBar"
 import OperationBar from "@modules/formula-library/operation-bar/OperationBar"
-import { useControl } from "@modules/formula-library/store"
+import { useFirstControl } from "@modules/formula-library/store"
 import { FC, PropsWithChildren } from "react"
 import css from "./ControlLayout.module.scss"
 
 const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { handleChange } = useControl()
+  const { handleChange } = useFirstControl()
+
+  const handleAdd = (value: string) => {
+    handleChange(value)
+  }
 
   return (
     <section className={css.control_wrapper}>
@@ -13,7 +17,7 @@ const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
         <OperationBar />
         <div className={css.content}>{children}</div>
       </div>
-      <LetterBar onAdd={handleChange} />
+      <LetterBar onAdd={handleAdd} />
     </section>
   )
 }

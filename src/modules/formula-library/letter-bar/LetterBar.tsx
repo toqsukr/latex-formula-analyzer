@@ -10,6 +10,7 @@ const LetterBar: FC<{ onAdd: (value: string) => void }> = ({ onAdd }) => {
     <aside className={css.letter_bar}>
       {greekLetters.map((letter) => (
         <FormulaTemplate
+          key={letter}
           onAdd={onAdd}
           templates={[
             {

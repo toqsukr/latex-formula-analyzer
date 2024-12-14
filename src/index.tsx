@@ -1,3 +1,5 @@
+import AchievementLayout from "@layouts/AchievementLayout.tsx"
+import ErrorLayout from "@layouts/ErrorLayout.tsx"
 import { queryClient } from "@modules/app/api.ts"
 import { QueryClientProvider } from "@tanstack/react-query"
 import "katex/dist/katex.min.css"
@@ -13,7 +15,11 @@ addStyles()
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <ErrorLayout>
+        <AchievementLayout>
+          <RouterProvider router={router} />
+        </AchievementLayout>
+      </ErrorLayout>
     </QueryClientProvider>
   </StrictMode>
 )

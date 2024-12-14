@@ -19,9 +19,10 @@ const UploadImage: FC<UploadImageProp> = ({
       try {
         const { formulas } = await uploadImage(file)
         onSuccess(formulas)
-        if (ref.current) ref.current.value = ""
       } catch {
         onError?.()
+      } finally {
+        if (ref.current) ref.current.value = ""
       }
     }
 

@@ -8,3 +8,7 @@ export enum Routes {
 export enum MutationKeys {
   UPLOAD_IMAGE = "upload-image",
 }
+
+export enum NotificationCodes {
+  SUCCESS_COPY = "success-clipboard",
+}

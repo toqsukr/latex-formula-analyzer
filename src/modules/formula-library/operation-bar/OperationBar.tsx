@@ -1,11 +1,11 @@
-import { useControl } from "../store"
+import { useFirstControl } from "../store"
 import FormulaIntegral from "./formula-integral/FormulaIntegral"
 import FormulaLogarifm from "./formula-logarifm/FormulaLogarifm"
 import FormulaSquareRoot from "./formula-square-root/FormulaSquareRoot"
 import css from "./OperationBar.module.scss"
 
 const OperationBar = () => {
-  const { handleChange } = useControl()
+  const { handleChange } = useFirstControl()
 
   const handleAdd = (value: string) => {
     handleChange(value)
