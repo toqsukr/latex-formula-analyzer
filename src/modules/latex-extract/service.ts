@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, HttpStatusCode } from "axios"
+import axios, { AxiosResponse } from "axios"
 import { HOST_URL } from "../app/constants"
 import { ExtractResponse } from "./type"
 
@@ -15,17 +15,6 @@ class ExtractService {
         },
       }
     )
-  }
-
-  async getImage(URL: string) {
-    const response = await fetch(URL, {
-      method: "GET",
-      mode: "cors",
-      cache: "no-cache",
-    })
-    if (response.status !== HttpStatusCode.Ok)
-      throw new Error("Failed to fetch image!")
-    return await response.blob()
   }
 }
 

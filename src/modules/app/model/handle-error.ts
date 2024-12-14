@@ -1,6 +1,6 @@
 import { isAxiosError } from "axios"
-import { useErrorStore } from "../store"
-import { Notification, NotificationScheme } from "../type.d"
+import { useNotificationStore } from "../store"
+import { Notification, NotificationSchema } from "../type.d"
 import { handleNotification } from "./handle-notification"
 
 /**
@@ -9,11 +9,12 @@ import { handleNotification } from "./handle-notification"
 
 export const handleErrorThunk = (error: unknown) => {
   const handledError = (
-    NotificationScheme.safeParse(error).success
+    NotificationSchema.safeParse(error).success
       ? error
       : isAxiosError(error)
-      ? { text: error.message, code: error.code ?? "" }
+      ? { type: "error", text: error.message, code: error.code ?? "" }
       : {
+          type: "error",
           text: JSON.stringify(error),
           code: "client error",
         }
@@ -21,6 +22,6 @@ export const handleErrorThunk = (error: unknown) => {
 
   handleNotification({
     notification: handledError,
-    store: useErrorStore.getState(),
+    store: useNotificationStore.getState(),
   })
 }

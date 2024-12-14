@@ -10,8 +10,13 @@ export const handleNotification = ({
   time?: number
 }) => {
   const { appendNotification, removeNotification } = store
-  appendNotification(notification)
-  setTimeout(() => {
-    removeNotification(notification.code)
-  }, time)
+  const existNotification = store.notifications.find(
+    ({ code }) => code === notification.code
+  )
+  if (!existNotification) {
+    appendNotification(notification)
+    setTimeout(() => {
+      removeNotification(notification.code)
+    }, time)
+  }
 }

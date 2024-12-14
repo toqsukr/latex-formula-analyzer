@@ -1,6 +1,7 @@
 import { MutationKeys, NotificationCodes } from "@modules/app/constants"
 import { handleNotification } from "@modules/app/model/handle-notification"
-import { useAchievementStore } from "@modules/app/store"
+import { useNotificationStore } from "@modules/app/store"
+import { Notification } from "@modules/app/type"
 import UploadImage from "@modules/latex-extract/upload-image/UploadImage"
 import IconButton from "@shared/ui/icon-button/IconButton"
 import SpinnerLoader from "@shared/ui/spinner-loader/SpinnerLoader"
@@ -27,13 +28,14 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
     if (latexValue) {
       try {
         await navigator.clipboard.writeText(latexValue)
-        const notification = {
+        const notification: Notification = {
+          type: "success",
           code: NotificationCodes.SUCCESS_COPY,
           text: "Формула скопирована!",
         }
         handleNotification({
           notification,
-          store: useAchievementStore.getState(),
+          store: useNotificationStore.getState(),
           time: 2000,
         })
       } catch (e) {
