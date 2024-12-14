@@ -27,10 +27,14 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
     mutationKey: [MutationKeys.UPLOAD_IMAGE, uploadKey],
   })
 
+  const isImagesUploading = useIsMutating({
+    mutationKey: [MutationKeys.UPLOAD_IMAGE],
+  })
+
   const { setFieldKey } = useActiveField()
 
   const handleCopy = async () => {
-    if (latexValue) {
+    if (latexValue && !isImagesUploading) {
       try {
         await navigator.clipboard.writeText(latexValue)
         const notification: Notification = {
@@ -82,7 +86,7 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
           onSuccess={(formulas) => handleChange(formulas.join("\\"))}
         />
         <IconButton
-          onClick={clearLatex}
+          onClick={() => !isImagesUploading && clearLatex}
           id={css.reset}
           icon={<RxCross2 className="w-[26px] h-[26px]" />}
         />

@@ -9,7 +9,7 @@ const UploadImage: FC<UploadImageProp> = ({
   onError,
   mutationKey,
 }) => {
-  const { uploadImage } = useUploadImage(mutationKey)
+  const { uploadImage, isImageUploading } = useUploadImage(mutationKey)
   const ref = useRef<HTMLInputElement>(null)
   const onSubmit = (files: File[]) => {
     const file = files[0]
@@ -29,6 +29,12 @@ const UploadImage: FC<UploadImageProp> = ({
     reader.readAsDataURL(file)
   }
 
+  const handleClick = () => {
+    if (!isImageUploading) {
+      ref.current?.click()
+    }
+  }
+
   return (
     <div className="flex relative">
       <input
@@ -40,7 +46,7 @@ const UploadImage: FC<UploadImageProp> = ({
       />
       <IconButton
         className="flex-1"
-        onClick={() => ref.current?.click()}
+        onClick={handleClick}
         icon={<MdOutlineFileUpload className="w-[26px] h-[26px]" />}
       />
     </div>
