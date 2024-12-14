@@ -6,28 +6,11 @@ export const queryClient = new QueryClient({
   defaultOptions: {
     mutations: {
       retry: false,
-      throwOnError: (error) => {
-        setTimeout(
-          () =>
-            handleErrorThunk(
-              isAxiosError(error) ? error.response?.data ?? error : error
-            ),
-          0
+      throwOnError: false,
+      onError: (error) => {
+        handleErrorThunk(
+          isAxiosError(error) ? error.response?.data ?? error : error
         )
-        return false
-      },
-    },
-    queries: {
-      staleTime: Infinity,
-      throwOnError: (error) => {
-        setTimeout(
-          () =>
-            handleErrorThunk(
-              isAxiosError(error) ? error.response?.data ?? error : error
-            ),
-          0
-        )
-        return false
       },
     },
   },
