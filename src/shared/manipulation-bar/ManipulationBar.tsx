@@ -86,7 +86,7 @@ const ManipulationBar: FC<ManipulationBarProp> = ({
           onSuccess={(formulas) => handleChange(formulas.join("\\"))}
         />
         <IconButton
-          onClick={() => !isImagesUploading && clearLatex}
+          onClick={() => !isImagesUploading && clearLatex()}
           id={css.reset}
           icon={<RxCross2 className="w-[26px] h-[26px]" />}
         />
