@@ -23,5 +23,9 @@
 }
 
 .help {
-  @apply fixed right-8 top-8 z-10;
+  @apply fixed right-8 top-8 z-10 cursor-pointer;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
 }

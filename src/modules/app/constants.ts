@@ -15,3 +15,7 @@ export enum NotificationCodes {
   COMPARE_RESULT = "compare-result",
   NO_COMPARE_DATA_ERROR = "no-compare-data-error",
 }
+
+export enum StorageKeys {
+  TIP_TRIP = "latex-tip-trip",
+}
