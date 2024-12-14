@@ -1,3 +1,5 @@
+import { FieldKeys } from "@modules/compare/type"
+
 export type CursorPositionStore = {
   position: number
   setPosition: (value: number) => void
@@ -5,7 +7,7 @@ export type CursorPositionStore = {
 }
 
 export type ControlStore = {
-  key: string
+  key: FieldKeys
   latexValue: string
   setLatex: (value: string) => void
   handleChange: (inputValue: string, replace?: boolean) => void

@@ -1,6 +1,9 @@
+import { FieldKeys } from "@modules/compare/type"
+
 export type ManipulationBarProp = {
   latexValue: string
   handleChange: (inputValue: string, replace?: boolean) => void
   clearLatex: () => void
-  uploadKey?: string
+  uploadKey: FieldKeys
+  active?: boolean
 }

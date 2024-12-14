@@ -1,5 +1,5 @@
 .manipulator {
-  @apply h-full grid gap-8;
+  @apply relative h-full grid gap-8;
   grid-template-columns: calc(100% - 119px) 87px;
   border-radius: var(--bar-border-radius);
 }
@@ -9,6 +9,11 @@
   grid-template-rows: repeat(auto-fit, 55px);
   background-color: var(--bar-background-color);
   border-radius: var(--bar-border-radius);
+}
+
+.arrow {
+  @apply absolute w-5 left-0 top-1/2;
+  transform: translate(-125%, -50%);
 }
 
 #reset {

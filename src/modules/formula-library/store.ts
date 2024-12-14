@@ -1,3 +1,4 @@
+import { FieldKeys } from "@modules/compare/type.d"
 import { create } from "zustand"
 import { latexChange } from "./model/latex-change"
 import { ControlStore, CursorPositionStore } from "./type"
@@ -9,7 +10,7 @@ export const useCursorPosition = create<CursorPositionStore>((set, get) => ({
 }))
 
 export const useFirstControl = create<ControlStore>((set, get) => ({
-  key: "first-formula",
+  key: FieldKeys.FIRST,
   clearLatex: () => set({ ...get(), latexValue: "" }),
   latexValue: "",
   handleChange: (inputValue, replace) =>
@@ -21,7 +22,7 @@ export const useFirstControl = create<ControlStore>((set, get) => ({
 }))
 
 export const useSecondControl = create<ControlStore>((set, get) => ({
-  key: "second-formula",
+  key: FieldKeys.SECOND,
   clearLatex: () => set({ ...get(), latexValue: "" }),
   latexValue: "",
   handleChange: (inputValue, replace) =>
