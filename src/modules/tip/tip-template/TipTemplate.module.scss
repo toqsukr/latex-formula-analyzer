@@ -1,0 +1,7 @@
+.template {
+  @apply grid absolute top-1/2 left-1/2 text-lg gap-8 p-8;
+  grid-template-rows: 1fr 50px;
+  background-color: var(--main-background-color);
+  border-radius: var(--bar-border-radius);
+  transform: translate(-50%, -50%);
+}

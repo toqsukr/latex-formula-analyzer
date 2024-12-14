@@ -1,5 +1,13 @@
+@use "/src/index.scss";
 .letter_bar {
   @apply flex gap-8 overflow-x-auto overflow-y-hidden p-8;
   background-color: var(--bar-background-color);
   border-radius: var(--bar-border-radius);
+}
+
+.letter_bar_tip {
+  pointer-events: none;
+  z-index: 101;
+  border-radius: var(--bar-border-radius);
+  box-shadow: 0 0 4px 4px rgba(255, 255, 255);
 }

@@ -1,3 +1,5 @@
+import { useFirstTip } from "@modules/app/store"
+import cn from "classnames"
 import { FC } from "react"
 import FormulaDivide from "./formula-divide/FormulaDivide"
 import FormulaIntegral from "./formula-integral/FormulaIntegral"
@@ -9,8 +11,11 @@ import FormulaTimes from "./formula-times/FormulaTimes"
 import css from "./OperationBar.module.scss"
 
 const OperationBar: FC<{ onAdd: (value: string) => void }> = ({ onAdd }) => {
+  const { currentStep, firstTip } = useFirstTip()
   return (
-    <section className={css.bar}>
+    <section
+      className={cn(css.bar, { [css.bar_tip]: firstTip && currentStep === 3 })}
+    >
       <FormulaSum onAdd={onAdd} />
       <FormulaMinus onAdd={onAdd} />
       <FormulaTimes onAdd={onAdd} />

@@ -14,3 +14,14 @@
 .content {
   @apply relative grid grid-rows-2 gap-8;
 }
+
+.content_tip {
+  pointer-events: none;
+  z-index: 101;
+  border-radius: var(--bar-border-radius);
+  box-shadow: 0 0 4px 4px rgba(255, 255, 255);
+}
+
+.help {
+  @apply fixed right-8 top-8 z-10;
+}

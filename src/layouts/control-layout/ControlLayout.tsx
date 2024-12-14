@@ -1,4 +1,5 @@
 import { MutationKeys } from "@modules/app/constants"
+import { useFirstTip } from "@modules/app/store"
 import { useActiveField } from "@modules/compare/store"
 import { FieldKeys } from "@modules/compare/type.d"
 import LetterBar from "@modules/formula-library/letter-bar/LetterBar"
@@ -8,10 +9,13 @@ import {
   useSecondControl,
 } from "@modules/formula-library/store"
 import { useIsMutating } from "@tanstack/react-query"
+import cn from "classnames"
 import { FC, PropsWithChildren } from "react"
+import { AiOutlineQuestionCircle } from "react-icons/ai"
 import css from "./ControlLayout.module.scss"
 
 const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
+  const { firstTip, currentStep, resetTip } = useFirstTip()
   const { handleChange: firstChange } = useFirstControl()
   const { handleChange: secondChange } = useSecondControl()
   const { fieldKey } = useActiveField()
@@ -31,9 +35,18 @@ const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <section className={css.control_wrapper}>
+      {firstTip || (
+        <AiOutlineQuestionCircle className={css.help} onClick={resetTip} />
+      )}
       <div className={css.formula_wrapper}>
         <OperationBar onAdd={handleAdd} />
-        <div className={css.content}>{children}</div>
+        <div
+          className={cn(css.content, {
+            [css.content_tip]: firstTip && currentStep == 2,
+          })}
+        >
+          {children}
+        </div>
       </div>
       <LetterBar onAdd={handleAdd} />
     </section>

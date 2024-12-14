@@ -18,3 +18,12 @@ export type NotificationStore = {
   appendNotification: (notification: Notification) => void
   removeNotification: (code: string) => void
 }
+
+export type FirstTipStore = {
+  firstTip: boolean
+  currentStep: number
+  setStep: (value: number) => void
+  incrementStep: () => void
+  setFirstTip: (value: boolean) => void
+  resetTip: () => void
+}

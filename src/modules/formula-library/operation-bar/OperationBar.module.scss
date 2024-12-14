@@ -5,3 +5,10 @@
   grid-template-columns: repeat(auto-fit, 120px);
   grid-template-rows: repeat(3, 1fr);
 }
+
+.bar_tip {
+  pointer-events: none;
+  z-index: 101;
+  border-radius: var(--bar-border-radius);
+  box-shadow: 0 0 4px 4px rgba(255, 255, 255);
+}
