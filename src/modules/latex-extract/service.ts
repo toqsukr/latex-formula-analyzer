@@ -2,6 +2,9 @@ import axios, { AxiosResponse } from "axios"
 import { HOST_URL } from "../app/constants"
 import { ExtractResponse } from "./type"
 
+/**
+ * Сервис для отправки запроса на преобразования фото в latex-формат
+ */
 class ExtractService {
   async extractImageToLatex(file: Blob) {
     const formData = new FormData()

@@ -1,5 +1,9 @@
 import { Notification, NotificationStore } from "../type"
 
+/**
+ * Функция добавления уведомления в хранилище
+ */
+
 export const handleNotification = ({
   notification,
   store,

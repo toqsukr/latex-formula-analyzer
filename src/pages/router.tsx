@@ -3,7 +3,6 @@ import TipLayout from "@layouts/TipLayout"
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom"
 import { Routes } from "../modules/app/constants"
 import Compare from "./compare/Compare"
-import Legend from "./legend/Legend"
 
 export const router = createBrowserRouter([
   {
@@ -19,10 +18,6 @@ export const router = createBrowserRouter([
       {
         path: Routes.COMPARE,
         element: <Compare />,
-      },
-      {
-        path: Routes.LEGEND,
-        element: <Legend />,
       },
     ],
   },

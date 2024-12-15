@@ -1,6 +1,10 @@
 import { useFirstTip } from "@modules/app/store"
 import TipTemplate from "../tip-template/TipTemplate"
 
+/**
+ * Пояснение для работы с греческими буквами
+ */
+
 const LetterTip = () => {
   const { incrementStep } = useFirstTip()
 

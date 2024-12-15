@@ -4,6 +4,14 @@ import { MdOutlineFileUpload } from "react-icons/md"
 import { useUploadImage } from "../model/hooks/useUploadImage"
 import { UploadImageProp } from "./UploadImage.type"
 
+/**
+ * Хук для загрузки фото формулы для последующего преобразования в latex
+ *
+ * @param onSuccess функция, выполняющаяся в случае успеха
+ * @param onError функция, выполняющаяся в случае ошибки
+ * @param mutationKey ключ управления запросом
+ */
+
 const UploadImage: FC<UploadImageProp> = ({
   onSuccess,
   onError,

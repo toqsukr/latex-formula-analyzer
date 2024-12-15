@@ -5,6 +5,13 @@ import { EditableMathField } from "react-mathquill"
 import css from "./EditableLatexField.module.scss"
 import { EditableLatexFieldProp } from "./EditableLatexField.type"
 
+/**
+ * Компонент для определения строки ввода в зависимости от мода
+ *
+ * Определяет параметр ввода (в исходном latex виде или в красивом формате)
+ *
+ * @param children дочерние элементы
+ */
 const EditableLatexField: FC<EditableLatexFieldProp> = ({
   onSwapClick,
   ...props

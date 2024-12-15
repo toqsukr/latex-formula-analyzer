@@ -6,6 +6,10 @@ import OperationTip from "../operation-tip/OperationTip"
 import OverviewTip from "../overview-tip/OverviewTip"
 import css from "./Tip.module.scss"
 
+/**
+ * Компонент с подсказками новым пользователям
+ */
+
 const Tip = () => {
   const { currentStep } = useFirstTip()
 

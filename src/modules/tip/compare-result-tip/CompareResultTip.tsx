@@ -1,6 +1,10 @@
 import { useFirstTip } from "@modules/app/store"
 import TipTemplate from "../tip-template/TipTemplate"
 
+/**
+ * Пояснение к полю вывода результата сравнения
+ */
+
 const CompareResultTip = () => {
   const { setFirstTip, setStep } = useFirstTip()
   const handleLastStep = () => {

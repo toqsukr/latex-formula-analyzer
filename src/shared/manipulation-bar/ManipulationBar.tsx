@@ -17,6 +17,19 @@ import css from "./ManipulationBar.module.scss"
 import { ManipulationBarProp } from "./ManipulationBar.type"
 import "./mathquill.scss"
 
+/**
+ * Компонент для управления полем ввода
+ *
+ * Задает строку управления полем, устанваливает обработчики кликов
+ *
+ * @param latexValue значение поля
+ * @param handleChange функция обработки ввода в поле
+ * @param clearLatex функция очистки поля
+ * @param uploadKey ключ управления загрузкой фото в данное поле
+ * @param active определяет активность поля для вставки
+ * @param fieldMode мод поля
+ * @param toggleFieldMode функция смены мода ввода
+ */
 const ManipulationBar: FC<ManipulationBarProp> = ({
   latexValue,
   handleChange,

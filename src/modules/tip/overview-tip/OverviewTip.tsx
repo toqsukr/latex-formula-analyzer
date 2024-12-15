@@ -1,6 +1,10 @@
 import { useFirstTip } from "@modules/app/store"
 import TipTemplate from "../tip-template/TipTemplate"
 
+/**
+ * Общее описание программы
+ */
+
 const OverviewTip = () => {
   const { incrementStep } = useFirstTip()
   return (

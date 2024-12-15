@@ -1,6 +1,10 @@
 import { useFirstTip } from "@modules/app/store"
 import TipTemplate from "../tip-template/TipTemplate"
 
+/**
+ * Пояснение для работы с математическими операциями
+ */
+
 const OperationTip = () => {
   const { incrementStep } = useFirstTip()
   return (

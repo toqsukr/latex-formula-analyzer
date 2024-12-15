@@ -4,7 +4,10 @@ import { Notification, NotificationSchema } from "../type.d"
 import { handleNotification } from "./handle-notification"
 
 /**
- * Функция обработки ошибок
+ * Функция  обработки ошибок
+ * Определяет тип переданной ошибки и добавляет ее в список уведомлений
+ *
+ * @param error уведомление для добавления
  */
 
 export const handleErrorThunk = (error: unknown) => {

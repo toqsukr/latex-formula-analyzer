@@ -7,6 +7,13 @@ import { StaticMathField } from "react-mathquill"
 import { useCompareResult } from "../store"
 import css from "./ResultBar.module.scss"
 
+/**
+ * Панель для отображения результата сравнения формул
+ *
+ * Использует информацию о статусе подсказок для визуального отображения
+ *
+ * Отображает лоадер во время ожидания результата сравнения
+ */
 const ResultBar = () => {
   const { result } = useCompareResult()
   const { currentStep, firstTip } = useFirstTip()

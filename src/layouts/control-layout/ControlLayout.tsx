@@ -15,6 +15,15 @@ import { FC, PropsWithChildren } from "react"
 import { AiOutlineQuestionCircle } from "react-icons/ai"
 import css from "./ControlLayout.module.scss"
 
+/**
+ * Компонент, задающий расположение элементам управления
+ *
+ * Отображает подсказку для полей ввода
+ *
+ * Определяет функцию добавления элементов в активное поле ввода
+ * @param children дочерние компоненты
+ */
+
 const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
   const { firstTip, currentStep, resetTip } = useFirstTip()
   const { handleChange: firstChange } = useFirstControl()

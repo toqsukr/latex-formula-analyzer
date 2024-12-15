@@ -7,6 +7,13 @@ import { FieldKeys } from "../type.d"
 import css from "./CompareControl.module.scss"
 import { useCompare } from "./useCompare"
 
+/**
+ * Компонент для отображения полей ввода и кнопки сравнения формул
+ *
+ * Отображает стрелку - текущее активное поле
+ * Отображает лоадер при ожидании результата сравнения
+ */
+
 const CompareControl = () => {
   const {
     firstKey,
@@ -23,6 +30,7 @@ const CompareControl = () => {
     <MdCompareArrows />,
     <SpinnerLoader className="absolute top-0 left-0" />,
   ]
+
   return (
     <>
       <ManipulationBar

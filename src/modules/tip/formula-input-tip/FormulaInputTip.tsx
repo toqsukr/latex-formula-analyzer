@@ -1,6 +1,10 @@
 import { useFirstTip } from "@modules/app/store"
 import TipTemplate from "../tip-template/TipTemplate"
 
+/**
+ * Пояснение для работы с полями для ввода формул
+ */
+
 const FormulaInputTip = () => {
   const { incrementStep } = useFirstTip()
   return (

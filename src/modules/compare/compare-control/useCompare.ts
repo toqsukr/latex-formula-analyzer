@@ -9,6 +9,12 @@ import { useIsMutating } from "@tanstack/react-query"
 import { useCompareFormules } from "../model/hooks/useCompareFormules"
 import { useCompareResult } from "../store"
 
+/**
+ * Хук для объединения логики компонента CompareControl
+ *
+ * Определяет действия при нажатии на кнопку сравнения
+ * После получения результата сравнения записывает его в хранилище
+ */
 export const useCompare = () => {
   const { key: firstKey, ...firstControl } = useFirstControl()
   const { key: secondKey, ...secondControl } = useSecondControl()

@@ -7,6 +7,11 @@ import { NotificationType } from "../type"
 import css from "./NotificationList.module.scss"
 import { NotificationListProp } from "./NotificationList.type"
 
+/**
+ * Компонент для отображения списокк уведомлений
+ * @param notifications уведомления для отображения
+ */
+
 const NotificationList: FC<NotificationListProp> = ({ notifications }) => {
   const referencedNotification = notifications.map((notification) => ({
     ...notification,

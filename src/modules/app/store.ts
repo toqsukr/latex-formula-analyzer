@@ -1,10 +1,13 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import { StorageKeys } from "./constants"
-import { appendNotificationAction } from "./model/append-error-action"
+import { appendNotificationAction } from "./model/append-notification-action"
 import { removeNotificationAction } from "./model/remove-error-action"
 import { FirstTipStore, NotificationStore } from "./type"
 
+/**
+ * Хранилище уведомлений
+ */
 export const useNotificationStore = create<NotificationStore>((set, get) => ({
   notifications: [],
   appendNotification: (notification) =>
@@ -12,6 +15,11 @@ export const useNotificationStore = create<NotificationStore>((set, get) => ({
   removeNotification: (code) => set(removeNotificationAction(code, get())),
 }))
 
+/**
+ * Хранилище информации о подсказоках
+ *
+ * Записывает информацию о том новый пользователь или нет в localstorage
+ */
 export const useFirstTip = create(
   persist<FirstTipStore, [], [], { firstTip: boolean }>(
     (set, get) => ({
