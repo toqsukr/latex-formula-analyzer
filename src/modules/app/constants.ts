@@ -1,4 +1,5 @@
-export const HOST_URL = "http://94.228.115.216:5000"
+export const HOST_URL = "http://localhost:5000/"
+// "http://94.228.115.216:5000"
 
 export enum Routes {
   COMPARE = "/compare",
