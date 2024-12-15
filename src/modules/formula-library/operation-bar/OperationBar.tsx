@@ -1,28 +1,40 @@
 import { useFirstTip } from "@modules/app/store"
+import SpinnerLoader from "@shared/ui/spinner-loader/SpinnerLoader"
 import cn from "classnames"
 import { FC } from "react"
-import FormulaDivide from "./formula-divide/FormulaDivide"
-import FormulaIntegral from "./formula-integral/FormulaIntegral"
-import FormulaLogarifm from "./formula-logarifm/FormulaLogarifm"
-import FormulaMinus from "./formula-minus/FormulaMinus"
-import FormulaSquareRoot from "./formula-square-root/FormulaSquareRoot"
-import FormulaSum from "./formula-sum/FormulaSum"
-import FormulaTimes from "./formula-times/FormulaTimes"
+import { StaticMathField } from "react-mathquill"
+import FormulaTemplate from "../formula-template/FormulaTemplate"
+import { useOperations } from "../model/hooks/useOperations"
 import css from "./OperationBar.module.scss"
 
 const OperationBar: FC<{ onAdd: (value: string) => void }> = ({ onAdd }) => {
   const { currentStep, firstTip } = useFirstTip()
+
+  const { data, isLoading } = useOperations()
+
   return (
     <section
       className={cn(css.bar, { [css.bar_tip]: firstTip && currentStep === 3 })}
     >
-      <FormulaSum onAdd={onAdd} />
-      <FormulaMinus onAdd={onAdd} />
-      <FormulaTimes onAdd={onAdd} />
-      <FormulaDivide onAdd={onAdd} />
-      <FormulaSquareRoot onAdd={onAdd} />
-      <FormulaLogarifm onAdd={onAdd} />
-      <FormulaIntegral onAdd={onAdd} />
+      {isLoading || !data ? (
+        <SpinnerLoader />
+      ) : (
+        <>
+          {data.latex_operations.map(({ label, latex }) => (
+            <div key={latex} className="h-[100px]">
+              <FormulaTemplate
+                templates={[
+                  {
+                    element: <StaticMathField>{label}</StaticMathField>,
+                    value: latex,
+                  },
+                ]}
+                onAdd={onAdd}
+              />
+            </div>
+          ))}
+        </>
+      )}
     </section>
   )
 }

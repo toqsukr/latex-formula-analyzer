@@ -1,4 +1,5 @@
 import { useFirstTip } from "@modules/app/store"
+import CompareResultTip from "../compare-result-tip/CompareResultTip"
 import FormulaInputTip from "../formula-input-tip/FormulaInputTip"
 import LetterTip from "../letter-tip/LetterTip"
 import OperationTip from "../operation-tip/OperationTip"
@@ -13,6 +14,7 @@ const Tip = () => {
     <FormulaInputTip />,
     <OperationTip />,
     <LetterTip />,
+    <CompareResultTip />,
   ]
 
   return <section className={css.tip}>{steps[currentStep - 1]}</section>

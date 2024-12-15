@@ -22,4 +22,7 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "./src/shared"),
     },
   },
+  server: {
+    host: "0.0.0.0",
+  },
 })

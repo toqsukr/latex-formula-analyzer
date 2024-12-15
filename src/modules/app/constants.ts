@@ -10,6 +10,10 @@ export enum MutationKeys {
   COMPARE_FORMULES = "compare-formules",
 }
 
+export enum QueryKeys {
+  GET_OPERATIONS = "get-operations",
+}
+
 export enum NotificationCodes {
   SUCCESS_COPY = "success-clipboard",
   COMPARE_RESULT = "compare-result",

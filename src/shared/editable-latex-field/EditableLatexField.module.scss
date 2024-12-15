@@ -1,0 +1,7 @@
+.swap {
+  @apply absolute top-4 right-5 w-[22px] h-[22px] cursor-pointer;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
+}

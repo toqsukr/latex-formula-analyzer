@@ -6,7 +6,7 @@ const OperationTip = () => {
   return (
     <TipTemplate
       text="Далее"
-      className="w-[400px] !left-[45%] !top-[40%]"
+      className="w-[400px] !left-[45%] !top-[30%]"
       onClick={incrementStep}
     >
       <p>

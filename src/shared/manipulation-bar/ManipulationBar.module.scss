@@ -1,12 +1,12 @@
 .manipulator {
-  @apply relative h-full grid gap-8;
-  grid-template-columns: calc(100% - 119px) 87px;
+  @apply relative h-full grid gap-6;
+  grid-template-columns: calc(100% - 119px) 63px;
   border-radius: var(--bar-border-radius);
 }
 
 .buttons {
-  @apply grid gap-4 p-4;
-  grid-template-rows: repeat(auto-fit, 55px);
+  @apply grid gap-4 p-3;
+  grid-template-rows: repeat(auto-fit, 40px);
   background-color: var(--bar-background-color);
   border-radius: var(--bar-border-radius);
 }

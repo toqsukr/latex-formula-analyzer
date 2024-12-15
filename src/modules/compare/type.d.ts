@@ -15,3 +15,8 @@ export enum FieldKeys {
   FIRST = "first-field",
   SECOND = "second-field",
 }
+
+export type CompareResult = {
+  result: string
+  setResult: (result: string) => void
+}

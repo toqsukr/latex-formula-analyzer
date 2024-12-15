@@ -1,5 +1,6 @@
 import { MutationKeys } from "@modules/app/constants"
 import { useFirstTip } from "@modules/app/store"
+import ResultBar from "@modules/compare/result-bar/ResultBar"
 import { useActiveField } from "@modules/compare/store"
 import { FieldKeys } from "@modules/compare/type.d"
 import LetterBar from "@modules/formula-library/letter-bar/LetterBar"
@@ -48,7 +49,10 @@ const ControlLayout: FC<PropsWithChildren> = ({ children }) => {
           {children}
         </div>
       </div>
-      <LetterBar onAdd={handleAdd} />
+      <div className="flex flex-col gap-8 overflow-auto">
+        <LetterBar onAdd={handleAdd} />
+        <ResultBar />
+      </div>
     </section>
   )
 }

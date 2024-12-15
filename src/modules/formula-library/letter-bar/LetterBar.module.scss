@@ -1,11 +1,11 @@
-@use "/src/index.scss";
 .letter_bar {
-  @apply flex gap-8 overflow-x-auto overflow-y-hidden p-8;
+  @apply max-h-[122px] flex gap-6 overflow-x-auto overflow-y-hidden p-6;
   background-color: var(--bar-background-color);
   border-radius: var(--bar-border-radius);
 }
 
 .letter_bar_tip {
+  @apply m-2;
   pointer-events: none;
   z-index: 101;
   border-radius: var(--bar-border-radius);

@@ -47,7 +47,7 @@ const UploadImage: FC<UploadImageProp> = ({
       <IconButton
         className="flex-1"
         onClick={handleClick}
-        icon={<MdOutlineFileUpload className="w-[26px] h-[26px]" />}
+        icon={<MdOutlineFileUpload className="w-[22px] h-[22px]" />}
       />
     </div>
   )

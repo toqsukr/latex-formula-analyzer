@@ -1,5 +1,5 @@
 .control_wrapper {
-  @apply w-full grid gap-8 self-center;
+  @apply relative max-w-[1540px] w-full grid gap-8 self-center;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr max-content;
   font-size: 250% !important;
@@ -8,7 +8,7 @@
 .formula_wrapper {
   @apply w-full grid gap-8 self-center;
   grid-template-columns: calc(30% - 2rem) 70%;
-  grid-template-rows: 492px;
+  grid-template-rows: 400px;
 }
 
 .content {
@@ -23,7 +23,7 @@
 }
 
 .help {
-  @apply fixed right-8 top-8 z-10 cursor-pointer;
+  @apply absolute right-[-2rem] top-[-1rem] z-10 cursor-pointer;
   transition: opacity 0.3s;
   &:hover {
     opacity: 0.8;

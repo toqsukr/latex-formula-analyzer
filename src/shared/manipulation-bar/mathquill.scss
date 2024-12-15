@@ -3,6 +3,7 @@
   width: max-content !important;
   display: flex !important;
   align-items: center !important;
+  font-size: 1.8rem !important;
 
   &.mq-hasCursor {
     padding: 0 !important;
@@ -20,7 +21,7 @@
 }
 
 .mq-editable-field {
-  height: 230px !important;
+  height: 182px !important;
   width: 100% !important;
   border-radius: var(--bar-border-radius) !important;
   border: 0 !important;

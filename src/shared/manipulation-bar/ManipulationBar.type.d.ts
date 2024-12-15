@@ -6,4 +6,6 @@ export type ManipulationBarProp = {
   clearLatex: () => void
   uploadKey: FieldKeys
   active?: boolean
+  fieldMode: "latex" | "raw"
+  toggleFieldMode: () => void
 }
